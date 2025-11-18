@@ -10,9 +10,9 @@ Beginning of a standalone Juno-106 inspired DCO monosynth for UF AES. Built arou
 | Blend             | X         |             |                 |
 | MIDI USB          |           |             |                 |
 | MIDI DIN          |           |             |                 |
-| VCF               |           |             |                 |
-| EG                |           |             |                 |
-| VCA               |           |             |                 |
+| VCF               | X         |             |                 |
+| EG                | X         |             |                 |
+| VCA               | X         |             |                 |
 | Power Solution    |           |             |                 |
 | Output            |           |             |                 |
 
@@ -22,14 +22,18 @@ Beginning of a standalone Juno-106 inspired DCO monosynth for UF AES. Built arou
   - [Build Steps](#build-steps)
   - [Quick Build & Flash](#quick-build--flash)
   - [Manual Flashing](#manual-flashing)
-  - [Notes](#notes)
+  - [I/O Notes](#io-notes)
 - [Architecture](#architecture)
   - [Component Diagram](#component-diagram)
   - [MIDI (DIN & USB)](#midi-din--usb)
-  - [DCO (Core Oscillator)](#dco-core-oscillator)
+  - [Digitally Controlled Oscillator (DCO)](#digitally-controlled-oscillator-dco)
     - [SAW](#saw)
     - [PULSE / PWM](#pulse--pwm)
     - [SUB OSC](#sub-osc)
+    - [BLEND](#blend)
+  - [Envelope Generator (EG)](#envelope-generator-eg)
+  - [Voltage Controlled Amplifier (VCA)](#voltage-conrolled-amplifier-vca)
+  - [Voltage Controlled Filter (VCF)](#voltage-controlled-filter-vcf)
   - [Power Solution](#power-solution)
 - [Incomplete BOM](#incomplete-bom)
 
@@ -60,7 +64,7 @@ cmake --build .
 1. Hold BOOTSEL on your Pico and plug it in
 2. Drag `SwampThing.uf2` onto the Pico drive
 
-### Notes:
+### I/O Notes:
 - Clock output: GPIO 13
 - CV output: GPIO 14
 
@@ -71,7 +75,7 @@ cmake --build .
 ## MIDI (DIN & USB):
 *Currently In Development*
 
-## DCO (Core Oscillator):
+## Digitally Controlled Oscillator (DCO):
 ![Basic DCO](img/basic_DCO.png "Basic DCO")
 ### SAW
 Juno-style ramp core. A TL074 op-amp integrator generates a rising ramp, NPN transistor reset discharges the timing capacitor at a rate set by the microcontroller clock. Pitch is set by the reset clock (GPIO 13). Ramp slope is set by a PWM-derived charge voltage filtered to DC (GPIO 14).
@@ -81,6 +85,24 @@ Saw --> Comparator, threshold = PWM
 
 ### SUB OSC
 OSC --> Flip Flop, halves frequency
+
+### BLEND
+Blend control between saw and pwm
+
+## Envelope Generator (EG):
+*Currently In Development*
+
+Design chosen
+
+## Voltage Conrolled Amplifier (VCA):
+*Currently In Development*
+
+JFET implementation
+
+## Voltage Controlled Filter (VCF):
+*Currently In Development*
+
+Based on Mortiz Klein / Erica Synths VCF
 
 ## Power Solution:
 *Currently In Development*
