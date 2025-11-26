@@ -25,7 +25,9 @@ Beginning of a standalone Juno-106 inspired DCO monosynth for UF AES. Built arou
   - [I/O Notes](#io-notes)
 - [Architecture](#architecture)
   - [Component Diagram](#component-diagram)
-  - [MIDI (DIN & USB)](#midi-din--usb)
+  - [MIDI](#midi)
+    - [USB MIDI](#usb-midi-implemented)
+    - [DIN MIDI](#din-midi-planned)
   - [Digitally Controlled Oscillator (DCO)](#digitally-controlled-oscillator-dco)
     - [SAW](#saw)
     - [PULSE / PWM](#pulse--pwm)
@@ -65,15 +67,30 @@ cmake --build .
 2. Drag `SwampThing.uf2` onto the Pico drive
 
 ### I/O Notes:
-- Clock output: GPIO 13
-- CV output: GPIO 14
+
+| Function            | GPIO #     | 
+| -----               | --------   | 
+| Clock output        | 13         |
+| CV output           | 14         |
+| Gate output         | 12         |
+
 
 # Architecture
 ## Component Diagram:
 ![Component Diagram](img/component_diagram.png "Component Diagram")
 
-## MIDI (DIN & USB):
-*Currently In Development*
+## MIDI:
+
+### USB MIDI (Implemented)
+SwampThing appears as a **class-compliant USB MIDI device** over the Pico’s micro-USB port using TinyUSB.
+
+![USB_MIDI](img/usb_midi.png "Component Diagram")
+
+
+### DIN MIDI (Planned)
+
+5-pin DIN MIDI IN (with opto-isolation and UART at 31.25 kbps) is planned. DIN and USB MIDI will eventually share the same internal note/gate handling.
+
 
 ## Digitally Controlled Oscillator (DCO):
 ![Basic DCO](img/basic_DCO.png "Basic DCO")
