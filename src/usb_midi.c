@@ -28,15 +28,18 @@ void tud_midi_rx_cb(uint8_t itf) {
             // Note On: set frequency and turn LED on
             float freq = midi_to_freq(note);
             synth_set_frequency(freq);
-            active_note = note;
+            synth_gate_on();
             board_led_write(true);
+            active_note = note;
+
         }
         else if (status == 0x80 || (status == 0x90 && vel == 0)) {
             // Note Off
             if (note == active_note) {
-                synth_gate_off();               // Later
-                active_note = -1;
+                synth_gate_off();
                 board_led_write(false);
+                active_note = -1;
+               
             }
         }
     }

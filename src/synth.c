@@ -5,6 +5,7 @@
 
 #define CLOCK_PIN 13
 #define CV_PIN    14
+#define GATE_PIN  12
 #define SYS_CLK   125000000.0f
 #define V_SUPPLY  3.3f
 #define MV_PER_HZ 0.00095f 
@@ -39,6 +40,11 @@ void synth_init(void) {
     pwm_init(cv_slice, &cv_cfg, true);
 
     cv_wrap_config = 4095;
+
+    // ----- GATE PIN -----
+    gpio_init(GATE_PIN);
+    gpio_set_dir(GATE_PIN, GPIO_OUT);
+    gpio_put(GATE_PIN, 0); // Start low
 }
 
 void synth_set_frequency(float freq_hz) {
@@ -69,6 +75,10 @@ void synth_set_frequency(float freq_hz) {
 }
 
 
+void synth_gate_on(void) {
+    gpio_put(GATE_PIN, 1);   // 3.3 V gate high
+}
+
 void synth_gate_off(void) {
-    // later
+    gpio_put(GATE_PIN, 0);   // 0 V gate low
 }

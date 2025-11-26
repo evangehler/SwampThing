@@ -9,7 +9,8 @@ void synth_init(void);
 // Set the oscillator frequency (updates both Audio and CV)
 void synth_set_frequency(float freq_hz);
 
-// Stop the oscillator (later)
+// Gate control for external VCA
+void synth_gate_on(void);
 void synth_gate_off(void);
 
 #endif
