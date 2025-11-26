@@ -8,7 +8,7 @@ Beginning of a standalone Juno-106 inspired DCO monosynth for UF AES. Built arou
 | DCO Pulse / PWM   | X         | X           |                 |
 | DCO SUB           | X         |             |                 |
 | Blend             | X         |             |                 |
-| MIDI USB          |           |             |                 |
+| MIDI USB          | X         | X           |                 |
 | MIDI DIN          |           |             |                 |
 | VCF               | X         |             |                 |
 | EG                | X         |             |                 |
