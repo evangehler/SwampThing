@@ -23,5 +23,6 @@ compile_commands.json
 Thumbs.db
 *.swp
 
-# Logs
+# MATLAB STUFF
 *.csv
+*.m
