@@ -39,5 +39,8 @@
     "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja",
     "cmake.configureSettings": {
         "PICO_SDK_PATH": "${env:USERPROFILE}/.pico-sdk/sdk/2.2.0"
+    },
+    "files.associations": {
+        "stdio.h": "c"
     }
 }

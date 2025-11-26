@@ -35,20 +35,27 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(SwampThing SwampThing.c )
+add_executable(SwampThing 
+    SwampThing.c
+    synth.c
+    usb_midi.c 
+    usb_descriptors.c
+    )
 
 pico_set_program_name(SwampThing "SwampThing")
 pico_set_program_version(SwampThing "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(SwampThing 1)
-pico_enable_stdio_usb(SwampThing 1)
+pico_enable_stdio_usb(SwampThing 0)
 
 # Add the standard library to the build
 target_link_libraries(SwampThing
     pico_stdlib
     hardware_pwm        # for clock + CV PWM outputs
     hardware_gpio       # for manual toggling
+    tinyusb_device      # USB MIDI
+    tinyusb_board       # for Board definition
 )
 
 # Add the standard include files to the build
