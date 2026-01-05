@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "external components")(type "KiCad")(uri "${KIPRJMOD}/external components")(options "")(descr "")(disabled))
+  (lib (name "SLW-178562-3A-S-D")(type "KiCad")(uri "${KIPRJMOD}/external components/SLW-178562-3A-S-D")(options "")(descr ""))
+  (lib (name "SDS-50J")(type "KiCad")(uri "${KIPRJMOD}/external components/SDS-50J")(options "")(descr ""))
+)
