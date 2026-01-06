@@ -6,7 +6,7 @@
 // Initialize PWM hardware
 void synth_init(void);
 
-// Set the oscillator frequency (updates both Audio and CV)
+// Set the oscillator frequency
 void synth_set_frequency(float freq_hz);
 
 // Gate control for external VCA
