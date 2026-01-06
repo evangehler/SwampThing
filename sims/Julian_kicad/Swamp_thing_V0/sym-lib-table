@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "SLW-178562-3A-S-D")(type "KiCad")(uri "${KIPRJMOD}/external components/SLW-178562-3A-S-D/SLW-178562-3A-S-D.kicad_sym")(options "")(descr ""))
+  (lib (name "SDS-50J")(type "KiCad")(uri "${KIPRJMOD}/external components/SDS-50J/SDS-50J.kicad_sym")(options "")(descr ""))
+)
