@@ -10,9 +10,9 @@ Beginning of a standalone Juno-106 inspired DCO monosynth for UF AES. Built arou
 | Blend             | X         |             |                 |
 | MIDI USB          | X         | X           |                 |
 | MIDI DIN          |           |             |                 |
-| VCF               | X         |             |                 |
-| EG                | X         |             |                 |
-| VCA               | X         |             |                 |
+| VCF               | X         | X           |                 |
+| EG                | X         | X           |                 |
+| VCA               | X         | X           |                 |
 | Power Solution    |           |             |                 |
 | Output            |           |             |                 |
 
