@@ -84,7 +84,7 @@ cmake --build .
 ### USB MIDI (Implemented)
 SwampThing appears as a **class-compliant USB MIDI device** over the Pico’s micro-USB port using TinyUSB.
 
-![USB_MIDI](img/usb_midi.png "Component Diagram")
+![USB_MIDI](img/usb_midi.png "USB MIDI")
 
 
 ### DIN MIDI (Planned)
@@ -125,6 +125,9 @@ Based on Mortiz Klein / Erica Synths VCF
 *Currently In Development*
 
  Presently planning +/- 12V, 5V rails.
+
+ ## Prototype:
+![Prototype](img/breadboard.png "Prototype")
 
 # Incomplete BOM:
 
